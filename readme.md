@@ -1,5 +1,4 @@
 # 🏆 League of LLMs
----
 
 **Same Prompt. Multiple AIs. One Winner.**
 
