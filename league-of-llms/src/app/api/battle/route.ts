@@ -57,8 +57,9 @@ export async function POST(request: Request) {
     .single();
 
   if (battleError || !battle) {
+    console.error("Battle insert failed:", battleError);
     return NextResponse.json({ error: "Could not create battle." }, { status: 500 });
-  }
+}
 
   try {
     const results = await callAllModels(shuffledModels, prompt);
