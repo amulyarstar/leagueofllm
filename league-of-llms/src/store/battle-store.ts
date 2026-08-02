@@ -17,7 +17,7 @@ interface BattleStoreState {
   reset: () => void;
 }
 
-const DEFAULT_MODELS: ModelName[] = ["gpt", "claude", "gemini", "grok"];
+const DEFAULT_MODELS: ModelName[] = ["gemini", "mistral"];
 
 export const useBattleStore = create<BattleStoreState>((set) => ({
   prompt: "",
