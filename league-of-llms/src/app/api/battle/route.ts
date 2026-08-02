@@ -59,7 +59,7 @@ export async function POST(request: Request) {
   if (battleError || !battle) {
     console.error("Battle insert failed:", battleError);
     return NextResponse.json({ error: "Could not create battle." }, { status: 500 });
-}
+  }
 
   try {
     const results = await callAllModels(shuffledModels, prompt);
@@ -90,6 +90,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ battleId: battle.id, responses: publicResponses }, { status: 201 });
   } catch (err) {
+    console.error("Battle generation failed:", err);
     await service.from("battles").update({ status: "flagged", flagged_reason: "generation_failed" }).eq("id", battle.id);
     return NextResponse.json(
       { error: "One or more models failed to respond. Please try again." },
