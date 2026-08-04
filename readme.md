@@ -1,5 +1,7 @@
 # 🏆 League of LLMs
 
+Live Demo: https://leagueofllm.vercel.app/
+
 **Same Prompt. Multiple AIs. One Winner.**
 
 League of LLMs is a platform where multiple AI models compete head-to-head on the same prompt. Users compare responses blindly, vote for the best answer, and discover which model performs best across different categories.
@@ -58,11 +60,7 @@ League of LLMs provides an unbiased comparison environment where users evaluate 
 
 ### AI Providers
 
-* OpenAI
-* Anthropic Claude
 * Google Gemini
-* DeepSeek
-* Grok
 * Mistral
 
 ## 📦 Installation
