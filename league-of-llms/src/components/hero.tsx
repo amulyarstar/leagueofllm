@@ -1,6 +1,6 @@
 import { MODEL_CATALOG } from "@/types";
 
-const SHOWCASE = ["gpt", "claude", "gemini", "grok"] as const;
+const SHOWCASE = ["Mistral", "Gemini"] as const;
 
 export function Hero() {
   return (
@@ -8,7 +8,7 @@ export function Hero() {
       <div className="mx-auto max-w-3xl">
         <span className="chip mx-auto mb-6 inline-flex items-center gap-2">
           <span className="h-1.5 w-1.5 rounded-full bg-neon-green" />
-          6 models · live blind battles
+          2 models · live blind battles
         </span>
 
         <h1 className="text-balance font-display text-4xl font-black uppercase leading-[1.05] tracking-tight sm:text-6xl">
@@ -19,11 +19,10 @@ export function Hero() {
           <span className="text-neon-magenta">One Winner.</span>
         </h1>
 
-        <p className="mx-auto mt-6 max-w-xl text-balance text-base text-ink-muted sm:text-lg">
-          Send one prompt into the arena. Watch four anonymized models answer blind.
-          Vote for the best, then reveal who was really behind Model A, B, C and D.
-        </p>
-
+<p className="mx-auto mt-6 max-w-xl text-balance text-base text-ink-muted sm:text-lg">
+  Send one prompt into the arena. Watch two anonymized models answer blind.
+  Vote for the best, then reveal who was really behind Model A and B.
+</p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
           {SHOWCASE.map((id) => {
             const m = MODEL_CATALOG[id as keyof typeof MODEL_CATALOG];
@@ -33,7 +32,6 @@ export function Hero() {
               </span>
             );
           })}
-          <span className="chip">+2 more</span>
         </div>
       </div>
     </section>
