@@ -1,5 +1,6 @@
 import { MODEL_CATALOG } from "@/types";
 
+// Match the exact casing in your MODEL_CATALOG (e.g. "Gemini" or "Mistral")
 const SHOWCASE = ["Mistral", "Gemini"] as const;
 
 export function Hero() {
@@ -19,16 +20,17 @@ export function Hero() {
           <span className="text-neon-magenta">One Winner.</span>
         </h1>
 
-<p className="mx-auto mt-6 max-w-xl text-balance text-base text-ink-muted sm:text-lg">
-  Send one prompt into the arena. Watch two anonymized models answer blind.
-  Vote for the best, then reveal who was really behind Model A and B.
-</p>
+        <p className="mx-auto mt-6 max-w-xl text-balance text-base text-ink-muted sm:text-lg">
+          Send one prompt into the arena. Watch two anonymized models answer blind.
+          Vote for the best, then reveal who was really behind Model A and B.
+        </p>
+
         <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
           {SHOWCASE.map((id) => {
             const m = MODEL_CATALOG[id as keyof typeof MODEL_CATALOG];
             return (
               <span key={id} className="chip">
-                {m.label}
+                {m?.label || id} {/* Added optional chaining ?. to prevent crashes */}
               </span>
             );
           })}
