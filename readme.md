@@ -110,9 +110,6 @@ Metrics include:
 * Public API
 * Enterprise Workspaces
 
-## 🤝 Contributing
-
-Contributions, feature requests, and bug reports are welcome.
 
 ## 📄 License
 
